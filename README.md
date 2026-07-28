@@ -6,6 +6,8 @@
 [![NativeWind](https://img.shields.io/badge/NativeWind-v4-06B6D4?logo=tailwindcss&logoColor=white)](https://www.nativewind.dev/)
 [![Redux Toolkit](https://img.shields.io/badge/State-Redux_Toolkit-764ABC?logo=redux&logoColor=white)](https://redux-toolkit.js.org/)
 [![Socket.io](https://img.shields.io/badge/Realtime-Socket.io-010101?logo=socketdotio&logoColor=white)](https://socket.io/)
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](LICENSE)
+
 
 **Trash Detail** is a multi-role, real-time waste management and problem tracking mobile application built with React Native and Expo. It bridges communication gaps between field waste collection personnel, customers, and administrative management teams by enabling instant photo-documented issue reporting and live support tracking.
 
@@ -250,4 +252,6 @@ Contributions are welcome! Please follow these steps:
 
 ## 📄 License
 
-This project is proprietary and confidential. All rights reserved.
+This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** license. See the [LICENSE](LICENSE) file for details.
+
+
