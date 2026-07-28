@@ -1,209 +1,253 @@
-# Trash Detail - Smart Waste Management & Problem Reporting
+# 🚛 Trash Detail — Smart Waste Management & Problem Reporting
 
-Trash Detail is a comprehensive waste management application designed to streamline communication between waste collection employees, customers, and administrators. Report collection issues instantly with photo evidence and track their resolution in real-time.
+[![React Native](https://img.shields.io/badge/React_Native-0.81.5-61DAFB?logo=react&logoColor=black)](https://reactnative.dev/)
+[![Expo](https://img.shields.io/badge/Expo-SDK_54-000000?logo=expo&logoColor=white)](https://expo.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![NativeWind](https://img.shields.io/badge/NativeWind-v4-06B6D4?logo=tailwindcss&logoColor=white)](https://www.nativewind.dev/)
+[![Redux Toolkit](https://img.shields.io/badge/State-Redux_Toolkit-764ABC?logo=redux&logoColor=white)](https://redux-toolkit.js.org/)
+[![Socket.io](https://img.shields.io/badge/Realtime-Socket.io-010101?logo=socketdotio&logoColor=white)](https://socket.io/)
 
-**KEY FEATURES:**
-
-🚛 **Problem Reporting & Tracking**
-
-- Capture and report trash collection issues with your camera
-- Document blocked bins, parked cars, locked gates, and access problems
-- Track problem status: pending, forwarded, or cancelled
-- View problem history with detailed timestamps and locations
-- Attach photos and additional notes for clarity
-
-💬 **Real-Time Communication**
-
-- Built-in chat system for instant communication
-- Separate threads for problems and support requests
-- Real-time messaging with typing indicators
-- Unread message notifications
-- Direct communication between employees, customers, and administrators
-
-👥 **Multi-Role Support**
-
-- **Employees**: Report collection problems with 4-step guided process
-- **Customers**: Track issues affecting your location
-- **Administrators**: Manage problems, users, and system-wide operations
-- **Super Admins**: Complete system oversight and user management
-
-📸 **Smart Documentation**
-
-- In-app camera for instant photo capture
-- Image gallery access for existing photos
-- Location-based problem logging
-- Customer code and problem code tracking
-- Detailed problem categorization
-
-📊 **Comprehensive Management**
-
-- View all problems by status and date
-- Filter and search functionality
-- Customer, employee, and admin management
-- Invitation system for new users
-- User profile management with edit capabilities
-
-🔔 **Notifications & Updates**
-
-- Push notifications for problem updates
-- Real-time status changes
-- Chat message alerts
-- System-wide announcements
-
-🔐 **Secure Authentication**
-
-- Email/password login
-- Social login with Google
-- Password recovery system
-- Verification code support
-- Role-based access control
-
-**WHO IS IT FOR?**
-
-**Waste Collection Companies**: Streamline operations, improve communication, and resolve collection issues faster.
-
-**Municipal Services**: Track and manage waste collection problems across neighborhoods and districts.
-
-**Property Management**: Keep residents informed about trash collection issues and resolutions.
-
-**Residential Communities**: Direct communication channel between residents and waste management services.
-
-**WHY CHOOSE TRASH DETAIL?**
-
-✓ **Instant Problem Resolution**: Report issues as they happen with photo evidence
-✓ **Transparent Communication**: Everyone stays informed with real-time updates
-✓ **Accountability**: Photo documentation ensures clear understanding of problems
-✓ **Efficient Workflow**: Guided reporting process makes documentation quick and easy
-✓ **Complete Visibility**: Track problems from report to resolution
-
-**PROBLEM TYPES SUPPORTED:**
-
-- Blocked dumpsters and bins
-- Parked cars blocking access
-- Locked gates during collection time
-- Overflowing bins requiring urgent pickup
-- Road construction blocking access routes
-- Fire hydrant blockages
-- Wrong parking locations
-- Driveway obstructions
-
-**SUPPORT FEATURES:**
-
-- In-app support chat for technical issues
-- Login and credential support
-- Notification troubleshooting
-- Direct connection to support team
-
-Whether you're a waste collection employee documenting field issues, a customer tracking problem resolution, or an administrator managing operations, Trash Detail provides the tools you need for efficient waste management communication.
+**Trash Detail** is a multi-role, real-time waste management and problem tracking mobile application built with React Native and Expo. It bridges communication gaps between field waste collection personnel, customers, and administrative management teams by enabling instant photo-documented issue reporting and live support tracking.
 
 ---
 
-## Development Setup
+## 📲 Download the App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+[![Download on App Store](https://img.shields.io/badge/App_Store-Download_on_iOS-007AFF?style=for-the-badge&logo=apple&logoColor=white)](https://apps.apple.com/au/app/trash-detail/id6762623763)
+[![Get it on Google Play](https://img.shields.io/badge/Google_Play-Get_it_on_Android-3DDC84?style=for-the-badge&logo=google-play&logoColor=white)](https://play.google.com/store/apps/details?id=com.caitlan.trashdetail)
 
-### Get started
+---
 
-1. Install dependencies
+## 📱 App Screenshots
+
+|                       🔐 Login & Authentication                        |                        📸 Guided Problem Capture                         |                            👤 User Profile                             |                               🎉 Problem Submitted                                |
+| :--------------------------------------------------------------------: | :----------------------------------------------------------------------: | :--------------------------------------------------------------------: | :-------------------------------------------------------------------------------: |
+| <img src="assets/screenshots/1.webp" width="220" alt="Login Screen" /> | <img src="assets/screenshots/2.webp" width="220" alt="Camera Capture" /> | <img src="assets/screenshots/3.webp" width="220" alt="User Profile" /> | <img src="assets/screenshots/4.webp" width="220" alt="Submission Confirmation" /> |
+|      **Secure Authentication**<br/>Email/Password & Role routing       |     **Step 1/4: Camera Capture**<br/>Instant photo evidence logging      |      **User Profile Management**<br/>Role details & account info       |            **Instant Confirmation**<br/>Unique ID generation (e.g. P2)            |
+
+---
+
+## ✨ Key Features
+
+### 🚛 1. Guided Problem Reporting & Documentation
+
+- **4-Step Wizard**: Streamlined reporting workflow (`Capture Photo` ➔ `Problem Details` ➔ `Select Customer` ➔ `Overview`).
+- **In-App Camera & Gallery**: Native camera capture powered by `expo-camera` with built-in image compression and manipulation (`expo-image-manipulator`).
+- **Cloudinary Integration**: Automated image uploading to Cloudinary for reliable remote storage and URL distribution.
+- **Categorization**: Report issues such as blocked bins, parked cars blocking dumpsters, locked gates, overflowing waste, or road construction.
+
+### 👥 2. Multi-Role Operating System
+
+- **👷 Employees**: Document field collection obstacles, track report progress, and receive live notifications on problem resolution.
+- **🏘️ Customers**: View logged issues affecting their premises, track progress, and communicate directly with support teams.
+- **🛡️ Admins & Super Admins**: Operational dashboard to view, review, forward, or cancel reported problems, manage user permissions, and invite new members.
+
+### 💬 3. Real-Time Chat & Support System
+
+- **Socket.io Integration**: Low-latency, bidirectional WebSocket connection for live messaging.
+- **Dedicated Chat Threads**: Separate communication channels for problem resolution and customer support requests.
+- **Rich Status Alerts**: Real-time read receipts, unread message badges, and instant toast notifications via `@baronha/ting`.
+
+### 🔐 4. Authentication & Security
+
+- **JWT & Role-Based Navigation**: Protected routes auto-filtered by user role using Expo Router layouts (`(auth)`, `(employee)`, `(customer)`, `(admin)`).
+- **Password Recovery & OTP**: Password reset flow with verification code support.
+
+---
+
+## 🛠️ Tech Stack
+
+| Domain                      | Technology / Library                                                                                       |
+| :-------------------------- | :--------------------------------------------------------------------------------------------------------- |
+| **Framework**               | [React Native 0.81.5](https://reactnative.dev/) with [Expo SDK 54](https://expo.dev/)                      |
+| **Routing**                 | [Expo Router v6](https://docs.expo.dev/router/introduction/) (File-based routing & role groups)            |
+| **Language**                | [TypeScript 5.9](https://www.typescriptlang.org/)                                                          |
+| **Styling**                 | [NativeWind v4](https://www.nativewind.dev/) & [TailwindCSS v3](https://tailwindcss.com/)                  |
+| **State Management**        | [Redux Toolkit](https://redux-toolkit.js.org/) & RTK Query (`@reduxjs/toolkit`)                            |
+| **Persistence**             | [`@react-native-async-storage/async-storage`](https://react-native-async-storage.github.io/async-storage/) |
+| **Real-Time Communication** | [Socket.io Client v4](https://socket.io/)                                                                  |
+| **Media & Native Hardware** | `expo-camera`, `expo-image-picker`, `expo-image-manipulator`, `expo-location`                              |
+| **Notifications & Toasts**  | `@baronha/ting` & `expo-haptics`                                                                           |
+
+---
+
+## 📂 Project Structure
+
+```text
+trash-detail/
+├── app/                        # Expo Router file-based pages & route groups
+│   ├── (admin)/                # Admin portal routes & tab navigation
+│   ├── (auth)/                 # Authentication screens (login, register, forgot/reset password)
+│   ├── (customer)/             # Customer portal routes & tab navigation
+│   ├── (employee)/             # Employee portal routes (problem creation wizard & tabs)
+│   ├── shared/                 # Shared screen components (e.g. Notifications)
+│   ├── _layout.tsx             # Root layout & Redux / Navigation providers
+│   └── index.tsx               # App entry redirect handler
+├── assets/                     # Media & design assets
+│   ├── images/                 # App icons, splash screens, & vector graphics
+│   └── screenshots/            # Documentation & README screenshots
+│       ├── 1.webp              # Login screen
+│       ├── 2.webp              # Camera capture step
+│       ├── 3.webp              # User profile
+│       └── 4.webp              # Submission confirmation
+├── components/                 # Reusable React components split by domain
+│   ├── admin/                  # Admin-specific components
+│   ├── auth/                   # Authentication forms & inputs
+│   ├── customer/               # Customer views & cards
+│   ├── employee/               # Problem reporting steps & employee UI
+│   └── shared/                 # Shared UI elements (headers, buttons, modals)
+├── constants/                  # Color tokens, roles, step definitions, state constants
+├── hooks/                      # Custom React hooks (Redux typed hooks, socket listeners)
+├── scripts/                    # Build & automation scripts (e.g. Android AAB signer)
+├── store/                      # Redux store configuration & RTK Query API slices
+│   ├── slices/                 # API slices (auth, admin, employee, customer, chat, notification)
+│   └── store.ts                # Main store configuration
+├── types/                      # TypeScript declarations (API schemas, components, models)
+└── utils/                      # Helper utilities (time formatting, Cloudinary uploader)
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Ensure you have the following installed on your machine:
+
+- **Node.js**: `v18.x` or higher
+- **npm** / **yarn** / **pnpm** / **bun**
+- **Expo Go** app on your mobile device (or Android Studio / Xcode for emulators)
+
+### Installation
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/xyryc/trash-detail.git
+   cd trash-detail
+   ```
+
+2. **Install dependencies**:
 
    ```bash
    npm install
    ```
 
-2. Start the app
+3. **Configure Environment Variables**:
+   Create a `.env` file in the root directory based on `.env.example`:
 
-   ```bash
-   npx expo start
+   ```env
+   EXPO_PUBLIC_API_URL=https://your-api-endpoint.com/api
+   EXPO_PUBLIC_SOCKET_URL=https://your-api-endpoint.com
+   EXPO_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+   EXPO_PUBLIC_CLOUDINARY_UPLOAD_PRESET=your_upload_preset
+
+   # Android Signing Credentials (Optional for local development)
+   ANDROID_KEYSTORE_FILE=upload-keystore.jks
+   ANDROID_KEY_ALIAS=upload
+   ANDROID_KEYSTORE_PASSWORD=your_keystore_password
+   ANDROID_KEY_PASSWORD=your_key_password
    ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-### Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
 
 ---
 
-## Play Store (Android) — Signed AAB
+## 🏃 Running the Application
 
-This repo includes `upload-keystore.jks` (upload key) and a helper script to generate a **signed** Android App Bundle (`.aab`) using Gradle.
+### Development Server
 
-### 1) Set signing env vars
-
-From the project root:
+Start the Expo bundler:
 
 ```bash
-export ANDROID_KEYSTORE_FILE="upload-keystore.jks"
-export ANDROID_KEYSTORE_PASSWORD="***"
-export ANDROID_KEY_ALIAS="***"
-export ANDROID_KEY_PASSWORD="***" # optional (defaults to ANDROID_KEYSTORE_PASSWORD)
+npm start
+# or
+npx expo start
 ```
 
-### 2) Build the signed AAB
+From the terminal menu, you can press:
 
-```bash
-npm run android:aab
-```
+- `a` to open in **Android Emulator**
+- `i` to open in **iOS Simulator**
+- `w` to open in **Web Browser**
+- Scan the QR code with **Expo Go** on your physical device
 
-Output:
+### Platform Specific Commands
 
-`android/app/build/outputs/bundle/release/app-release.aab`
+| Target Platform | Command           | Description                                   |
+| :-------------- | :---------------- | :-------------------------------------------- |
+| **Android**     | `npm run android` | Runs app on connected Android device/emulator |
+| **iOS**         | `npm run ios`     | Runs app on iOS simulator                     |
+| **Web**         | `npm run web`     | Launches local web development server         |
+| **Linter**      | `npm run lint`    | Runs Expo ESLint checks                       |
 
-Note: if you specifically need to run `clean` first, some React Native New Architecture projects may fail during native clean due to missing codegen folders. You can opt-in via:
+---
 
-```bash
-ANDROID_GRADLE_CLEAN=1 npm run android:aab
-```
+## 📦 Production Builds & Android AAB Release
 
-By default the build script also verifies signing (fails if it detects the debug keystore). To disable verification:
+This project includes an automated script (`scripts/build-android-aab-signed.mjs`) to generate signed **Android App Bundles (.aab)** ready for Google Play Store upload.
 
-```bash
-ANDROID_VERIFY_SIGNING=0 npm run android:aab
-```
+### Building Signed Android AAB
 
-### 3) Verify keystore + AAB signature
+1. **Ensure environment variables are configured**:
 
-List keystore details (fingerprints/owner):
+   ```bash
+   export ANDROID_KEYSTORE_FILE="upload-keystore.jks"
+   export ANDROID_KEYSTORE_PASSWORD="your_keystore_password"
+   export ANDROID_KEY_ALIAS="upload"
+   export ANDROID_KEY_PASSWORD="your_key_password"
+   ```
 
-```bash
-keytool -list -v -keystore upload-keystore.jks -alias "$ANDROID_KEY_ALIAS"
-```
+2. **Execute the build script**:
 
-Verify the generated AAB is signed:
+   ```bash
+   npm run android:aab
+   ```
 
-```bash
-jarsigner -verify -verbose -certs android/app/build/outputs/bundle/release/app-release.aab
-```
+   _The generated signed bundle will be available at:_
+   `android/app/build/outputs/bundle/release/app-release.aab`
 
-You can also view the Gradle signing configuration:
+3. **Verification Utilities**:
+   - **Check keystore details**:
+     ```bash
+     keytool -list -v -keystore upload-keystore.jks -alias "$ANDROID_KEY_ALIAS"
+     ```
+   - **Verify AAB Signature**:
+     ```bash
+     jarsigner -verify -verbose -certs android/app/build/outputs/bundle/release/app-release.aab
+     ```
+   - **Generate Gradle Signing Report**:
+     ```bash
+     npm run android:signingReport
+     ```
 
-```bash
-npm run android:signingReport
-```
+---
+
+## 📜 Available Scripts
+
+| Command                         | Action                                       |
+| :------------------------------ | :------------------------------------------- |
+| `npm start`                     | Starts the Expo Metro bundler                |
+| `npm run android`               | Compiles & launches native Android dev build |
+| `npm run ios`                   | Compiles & launches native iOS dev build     |
+| `npm run web`                   | Launches Expo web dev server                 |
+| `npm run lint`                  | Runs ESLint analysis                         |
+| `npm run android:aab`           | Builds a signed Android App Bundle (.aab)    |
+| `npm run android:signingReport` | Outputs Gradle signing certificate details   |
+| `npm run reset-project`         | Resets project to a blank starter template   |
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the branch (`git checkout -b feature/AmazingFeature`).
+5. Open a Pull Request.
+
+---
+
+## 📄 License
+
+This project is proprietary and confidential. All rights reserved.
